@@ -3,13 +3,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "UqudoSDK",
+    name: "UqudoSDK-Preview",
     platforms: [
         .iOS(.v12)
     ],
     products: [
         .library(
-            name: "UqudoSDK",
+            name: "UqudoSDK-Preview",
             targets: ["UqudoSDKWrapper"]),
     ],
     dependencies: [
@@ -19,13 +19,13 @@ let package = Package(
         .target(
             name: "UqudoSDKWrapper",
             dependencies: [
-                .target(name: "UqudoSDK"),
+                .target(name: "UqudoSDK-Preview"),
                 .product(name: "ShieldPtr", package: "shield-ptr-spm")
             ],
             path: "Sources/UqudoSDKWrapper"
         ),
         .binaryTarget(
-            name: "UqudoSDK",
+            name: "UqudoSDK-Preview",
             url: "https://rm.dev.uqudo.io/repository/uqudo-public/io/uqudo/sdk/iOS-Uqudo-Preview/3.7.0.PRE/iOS-Uqudo-Preview-3.7.0.PRE.zip",
             checksum: "37bfde26f4a963ea89e5da8f3db807bff59ea02c76fc02932538c7bdfd0db079"
         )
